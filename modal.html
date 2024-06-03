@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Popup</title>
+    <style>
+        /* Popup container */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #333;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        /* Popup close button */
+        .popup .close-btn {
+            display: inline-block;
+            margin-left: 20px;
+            cursor: pointer;
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Page overlay */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+<div class="overlay" id="overlay"></div>
+<h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid repellendus quas quos molestias fugiat laboriosam odio veniam excepturi dignissimos nam sunt tempora beatae voluptatibus, cupiditate in dolor reiciendis earum consequatur!</h3>
+<h3>Assumenda, eius beatae minima quas veritatis officia facere debitis soluta ea maiores veniam animi magnam ipsam, voluptatum laborum! Optio ex, quam non qui dolorum aliquid natus reiciendis recusandae saepe aspernatur?</h3>
+<h3>Corporis quam at alias non. Error provident deleniti temporibus cupiditate architecto suscipit consequatur laborum reiciendis ratione vel iste dolore, impedit dignissimos doloremque facilis voluptates ullam. Cumque quod consequatur quae recusandae.</h3>
+<h3>Esse numquam culpa, id accusantium facere quam placeat consectetur recusandae et sed soluta eveniet optio, earum fugiat officia commodi perferendis tenetur autem. Quos porro deleniti illo voluptatum voluptates vitae fugiat!</h3>
+<h3>Ullam sed numquam nobis officia magni incidunt quaerat, voluptatem veritatis ex laboriosam consequatur corporis enim quasi voluptates perferendis, eveniet necessitatibus facilis sapiente. Nostrum nisi omnis perferendis fuga optio, atque necessitatibus.</h3>
+<h3>Mollitia, adipisci. Est voluptate consequuntur repellat exercitationem, adipisci veniam, inventore autem fugiat maxime veritatis quaerat ad dolorum nam necessitatibus odio, accusantium assumenda! Ipsum commodi officiis perspiciatis, odit ex qui officia!</h3>
+<h3>Aspernatur suscipit dolore sunt iste impedit quam? Possimus nesciunt quae natus, enim, beatae ex necessitatibus consectetur vitae excepturi velit aspernatur quos aliquid dolores dolorum a praesentium recusandae explicabo. Minima, iste.</h3>
+<h3>Temporibus voluptate, quis repellendus dolore fugit nam ducimus commodi aut natus saepe officiis assumenda obcaecati iste omnis fugiat placeat molestiae autem blanditiis totam similique est! Dicta eos voluptas dolorem voluptates.</h3>
+<h3>Fugit libero, aliquam velit, neque molestias atque quibusdam minus veritatis nemo sequi qui itaque consequuntur deserunt! Amet deserunt, tempora nulla explicabo autem consequuntur sed architecto aliquid, laborum exercitationem veniam ipsum?</h3>
+<h3>Eum quisquam cupiditate, nesciunt voluptates maxime quidem quos. Ut itaque temporibus perferendis consequatur cupiditate qui magni quasi, culpa reprehenderit necessitatibus hic harum modi rerum, consequuntur maiores in voluptates cumque nesciunt.</h3>
+<h3>Quo odit, laudantium quos molestiae soluta, delectus dignissimos doloremque fugiat laboriosam vel ea et dolores exercitationem tenetur veniam modi quia numquam nihil, ducimus voluptate inventore quisquam? Laboriosam animi libero beatae.</h3>
+<h3>Necessitatibus similique velit ab veniam dicta ut accusantium nemo illo enim odit dolorum ipsum itaque quo dolores vel vitae esse ea id delectus quasi, ad dolorem dignissimos dolor! Eos, voluptatem.</h3>
+<h3>Nobis harum doloribus incidunt eligendi sequi libero tenetur, minus quae facilis aliquam aliquid vero rem modi possimus sunt quasi cum. Tempora ullam velit voluptate aliquam rem vel sapiente qui eaque.</h3>
+<h3>Iure praesentium quibusdam harum, soluta, minima hic, perspiciatis accusantium illo nesciunt quam nemo nihil doloribus ad placeat aspernatur non odio? Sit numquam est sapiente soluta deserunt! Placeat dolorum molestiae nemo.</h3>
+<h3>Velit inventore ut illum libero minima. In facere quod dignissimos debitis nostrum tempore, harum esse, labore amet distinctio quidem alias sequi delectus minima minus rerum itaque. Exercitationem provident quod magnam!</h3>
+<h3>Itaque labore nihil nobis natus quos ad vitae illo, deserunt, consectetur, dignissimos repellendus unde cum in eos ut quo eum assumenda. Veniam suscipit enim magnam atque obcaecati debitis minima? Debitis.</h3>
+<h3>Soluta harum quae similique incidunt, necessitatibus voluptatibus inventore dolore? Est, et voluptatem! At, repellendus exercitationem corporis accusamus neque obcaecati odit blanditiis quam ea? Culpa totam doloribus aperiam tenetur laborum voluptatum?</h3>
+<h3>Quis, iste ipsum? Quidem, sequi ut qui dignissimos a incidunt magni? Distinctio reprehenderit fugit dolorem assumenda facere quas suscipit tempore, quaerat, sequi eos quasi dolore sint impedit debitis, quia dolor!</h3>
+<h3>Possimus totam itaque doloremque veniam, odit velit doloribus minus? Temporibus consequatur aut nesciunt. Illum necessitatibus provident voluptatibus rem architecto similique quam illo, corrupti iste laborum sequi fugiat tempora nam distinctio.</h3>
+<h3>Incidunt repellat dolorem sit ut perspiciatis officiis repellendus, sint nam cupiditate magnam, cumque sequi eos reiciendis labore iste doloremque sed minus reprehenderit ducimus? Accusamus magnam dolor ex odio libero hic.</h3>
+<h3>A eius perferendis harum eveniet culpa vitae, tempore veniam dolorem unde sunt! Eum eaque quam accusamus consequuntur facere mollitia commodi cupiditate quaerat, ipsa, voluptatem minus officiis doloremque temporibus ipsam unde?</h3>
+<h3>Porro laboriosam eligendi, quas officia rerum fugiat veniam ab ea quaerat. Tempora laborum quis sequi nobis repudiandae laboriosam debitis temporibus corrupti consequatur incidunt, dolorum praesentium porro id quam assumenda ducimus!</h3>
+<h3>Perspiciatis debitis cum ea omnis in nemo officiis quibusdam. Distinctio, doloremque vitae corporis autem suscipit molestiae aut rem tempora incidunt sunt quis quidem fugit cum aspernatur harum, est, quibusdam voluptas.</h3>
+<h3>Non odio et ea voluptatem ex exercitationem vero error repellat accusantium soluta beatae inventore distinctio tenetur, magnam nostrum rerum, aut aliquam possimus officiis fuga cum reiciendis laudantium repudiandae earum! Ea?</h3>
+
+<div class="popup" id="popup">
+    <p>This is a popup message.</p>
+    <span class="close-btn" id="close-btn">Close</span>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      function setCookie(name, value, days) {
+          const date = new Date();
+          date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+          const expires = "expires=" + date.toUTCString();
+          document.cookie = name + "=" + value + ";" + expires + ";path=/";
+      }
+
+      function getCookie(name) {
+          const nameEQ = name + "=";
+          const ca = document.cookie.split(';');
+          for (let i = 0; i < ca.length; i++) {
+              let c = ca[i];
+              while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+              if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+          }
+          return null;
+      }
+
+      function showPopup() {
+          document.getElementById('overlay').style.display = 'block';
+          document.getElementById('popup').style.display = 'block';
+      }
+
+      function hidePopup() {
+          document.getElementById('overlay').style.display = 'none';
+          document.getElementById('popup').style.display = 'none';
+          setCookie('popupClosed', 'true', 7);
+      }
+
+      const popupClosed = getCookie('popupClosed');
+      if (!popupClosed) {
+          let hasScrolled = false;
+          window.addEventListener('scroll', function onScroll() {
+              if (!hasScrolled) {
+                  hasScrolled = true;
+                  showPopup();
+              }
+          });
+      }
+
+      document.getElementById('close-btn').addEventListener('click', hidePopup);
+  });
+</script>
+
+</body>
+</html>
