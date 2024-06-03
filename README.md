@@ -1,0 +1,1 @@
+This project includes a JavaScript function designed to display a modal popup on a user's first visit to the site. After the user closes the popup, it will not reappear for seven days on subsequent visits.
